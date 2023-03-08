@@ -1,0 +1,25 @@
+// Recipe.swift
+
+struct Recipe: Codable {
+    let label: String
+    let image: String
+    let url: String
+    let ingredients: [Ingredient]
+}
+
+struct Ingredient: Codable {
+    let text: String
+    let weight: Double
+}
+
+// Hits.swift
+
+struct Hits: Codable {
+    let recipe: Recipe
+}
+
+// Response.swift
+
+struct Response: Codable {
+    let hits: [Hits]
+}
