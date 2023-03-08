@@ -1,0 +1,19 @@
+class RecipeTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var servingsLabel: UILabel!
+    
+    func configure(with recipe: Recipe) {
+        nameLabel.text = recipe.label
+        recipeImageView.image = UIImage(named: "placeholder") // Replace with actual image
+        servingsLabel.text = "\(recipe.yield) servings"
+    }
+}
+
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
+    let recipe = recipes[indexPath.row]
+    cell.configure(with: recipe)
+    return cell
+}
