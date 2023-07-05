@@ -3,3 +3,5 @@ venv
 *.html
 *_files/
 .ipynb_checkpoints
+/.quarto/
+/_site/

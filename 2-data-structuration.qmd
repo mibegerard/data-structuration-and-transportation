@@ -97,7 +97,7 @@ It is ubiquitous in tech:
 
 ## CSV format (2/2)
 
-```.{plain}
+```{.plain}
 id,name,city,school
 0001,Pierre,Paris,EPITA
 0002,Ada,London,Home
@@ -115,14 +115,14 @@ id,name,city,school
 
 . . .
 
-```.{plain}
+```{.plain}
 id,name,city,age,school
 0001,Pierre,Paris,36,EPITA
 0002,Ada,London,,Home
 0003,Margaret,Boston,,MIT
 ```
 
-## CSV exercises
+## CSV exercises (1/2)
 
 **Exercise 3**
 
@@ -134,11 +134,22 @@ id,name,city,age,school
 
 >  Read the `users.csv` file using the `csv` package and store it into a list of class instances
 
-. . .
+## CSV exercises (2/2)
 
 **Exercise 5**
 
->  Read the `ratp.csv` file using the `csv` package and standardize the names
+>  Read the `ratp.csv` file using the `csv` package and place the data in class instances with the following schema
+
+```{.python}
+class Station:
+  rank: int
+  network: str
+  name: str
+  number_of_users: int
+  connections: list[str]
+  city: str
+  district: int | None
+```
 
 RATP data coming from their [open data datasets](https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2021/information/).
 
@@ -233,4 +244,8 @@ However, this one is invalid:
 
 **Exercise 6**
 
->  Read the `users.json` file, store it into a list of class instances and compare them with the ones created from the CSV file.
+>  Read the `users.json` file and store it into a list of class instances.
+
+**Exercise 7**
+
+>  Read the `french-cities.json` file and compute for each region the total population, the average population by city and find the biggest city

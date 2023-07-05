@@ -24,6 +24,6 @@ customer <-> mobile-application
 single-page-application <-> backend.api: HTTPS / JSON
 mobile-application <-> backend.api: HTTPS / JSON
 
-backend.api <-> backend.db: Store / retrieve data
-backend.api -> other-systems.notification-system: HTTPS / JSON
+backend.api <-> backend.db: SQL / ORM
+backend.api -> other-systems.notification-system: gRPC
 backend.api -> other-systems.analytics: HTTPS / JSON
